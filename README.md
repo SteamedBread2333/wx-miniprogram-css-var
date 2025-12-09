@@ -1,45 +1,45 @@
-# 微信小程序CSS变量主题切换Demo
+# WeChat Mini Program CSS Variable Theme Switching Demo
 
-一个简单的微信小程序demo，演示如何使用CSS变量实现主题切换功能。
+A simple WeChat Mini Program demo demonstrating how to implement theme switching using CSS variables.
 
-## 功能说明
+## Features
 
-- 支持浅色/深色主题切换
-- 使用CSS变量定义主题样式
-- 主题设置自动保存到本地存储
-- 切换主题时更新导航栏颜色
+- Support for light/dark theme switching
+- Theme styles defined using CSS variables
+- Theme settings automatically saved to local storage
+- Navigation bar color updates when switching themes
 
-## 技术实现
+## Technical Implementation
 
-- 使用CSS变量定义不同主题的样式
-- 通过`data-theme`属性切换主题
-- 使用微信小程序的本地存储保存主题设置
+- Uses CSS variables to define styles for different themes
+- Switches themes via `data-theme` attribute
+- Saves theme settings using WeChat Mini Program's local storage
 
-## 如何使用
+## How to Use
 
-1. 克隆或下载项目到本地
-2. 使用微信开发者工具打开项目
-3. 点击"浅色主题"或"深色主题"按钮切换主题
-4. 重新打开小程序时，会自动应用上次的主题设置
+1. Clone or download the project to your local machine
+2. Open the project with WeChat Developer Tools
+3. Click the "Light Theme" or "Dark Theme" button to switch themes
+4. When reopening the mini program, the last theme setting will be automatically applied
 
-## 项目结构
+## Project Structure
 
 ```
 mini-css-var/
 ├── app.js
 ├── app.json
-├── app.wxss      # 定义全局CSS变量
+├── app.wxss      # Define global CSS variables
 ├── pages/
-│   ├── index/    # 主题切换demo页面
+│   ├── index/    # Theme switching demo page
 │   └── logs/
 └── utils/
 ```
 
-## 核心代码
+## Core Code
 
-### 定义CSS变量 (app.wxss)
+### Define CSS Variables (app.wxss)
 ```css
-/* 浅色主题 */
+/* Light theme */
 page,
 scroll-view {
   --bg-color: #ffffff;
@@ -50,7 +50,7 @@ scroll-view {
   --card-bg: #f7f7f7;
 }
 
-/* 深色主题 */
+/* Dark theme */
 page[data-theme="dark"],
 scroll-view[data-theme="dark"] {
   --bg-color: #1a1a1a;
@@ -62,24 +62,24 @@ scroll-view[data-theme="dark"] {
 }
 ```
 
-### 主题切换逻辑 (index.js)
+### Theme Switching Logic (index.js)
 ```javascript
-// 切换主题方法
+// Switch theme method
 switchTheme(e) {
   const theme = e.currentTarget.dataset.theme
   this.setData({
     currentTheme: theme,
     pageTheme: theme
   })
-  // 保存主题设置
+  // Save theme settings
   wx.setStorageSync('theme', theme)
 }
 ```
 
-## 注意事项
+## Notes
 
-- 确保微信开发者工具的基础库版本支持CSS变量
-- 如果需要添加更多主题颜色，可以在app.wxss中扩展CSS变量定义
+- Ensure that your WeChat Developer Tools' base library version supports CSS variables
+- If you need to add more theme colors, you can extend the CSS variable definitions in app.wxss
 
 ## License
 

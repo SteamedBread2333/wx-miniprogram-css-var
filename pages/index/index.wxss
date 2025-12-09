@@ -1,0 +1,149 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+  background-color: var(--bg-color);
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.theme-demo {
+  width: 100%;
+  max-width: 600rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60rpx;
+  color: var(--text-color);
+}
+
+/* 主题切换按钮 */
+.theme-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 20rpx;
+  margin-bottom: 60rpx;
+}
+
+.theme-btn {
+  padding: 20rpx 40rpx;
+  border: 2rpx solid var(--border-color);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+.theme-btn.active {
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  border-color: var(--primary-color);
+}
+
+/* 卡片样式 */
+.card {
+  background-color: var(--card-bg);
+  border: 2rpx solid var(--border-color);
+  border-radius: 16rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.card-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  color: var(--text-color);
+}
+
+.card-text {
+  font-size: 28rpx;
+  line-height: 1.6;
+  margin-bottom: 30rpx;
+  color: var(--text-color);
+}
+
+/* 按钮组 */
+.button-group {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.primary-btn {
+  flex: 1;
+  padding: 20rpx;
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  border: none;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+.secondary-btn {
+  flex: 1;
+  padding: 20rpx;
+  background-color: var(--secondary-color);
+  color: var(--button-text);
+  border: none;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+/* 列表样式 */
+.list {
+  border: 2rpx solid var(--border-color);
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.list-item {
+  padding: 24rpx;
+  border-bottom: 2rpx solid var(--border-color);
+  font-size: 28rpx;
+  color: var(--text-color);
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+/* 信息卡片 */
+.info-card {
+  background-color: var(--card-bg);
+  border: 2rpx solid var(--border-color);
+  border-radius: 16rpx;
+  padding: 30rpx;
+}
+
+.info-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+  color: var(--text-color);
+}
+
+.info-text {
+  font-size: 26rpx;
+  line-height: 1.5;
+  color: var(--text-color);
+  opacity: 0.8;
+}

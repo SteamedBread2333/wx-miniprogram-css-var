@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list" data-theme="{{pageTheme || currentTheme}}">
+  <view class="container">
+    <view class="theme-demo">
+      <h1 class="title">CSS变量主题切换</h1>
+      
+      <!-- 主题切换按钮 -->
+      <view class="theme-switcher">
+        <button class="theme-btn {{currentTheme === 'light' ? 'active' : ''}}" bindtap="switchTheme" data-theme="light">浅色主题</button>
+        <button class="theme-btn {{currentTheme === 'dark' ? 'active' : ''}}" bindtap="switchTheme" data-theme="dark">深色主题</button>
+      </view>
+      
+      <!-- 展示卡片 -->
+      <view class="card">
+        <h2 class="card-title">主题示例</h2>
+        <p class="card-text">这是一段示例文本，展示主题切换时的文字颜色变化。</p>
+        
+        <!-- 按钮示例 -->
+        <view class="button-group">
+          <button class="primary-btn">主要按钮</button>
+          <button class="secondary-btn">次要按钮</button>
+        </view>
+        
+        <!-- 列表示例 -->
+        <view class="list">
+          <view class="list-item">列表项1</view>
+          <view class="list-item">列表项2</view>
+          <view class="list-item">列表项3</view>
+        </view>
+      </view>
+      
+      <!-- CSS变量说明 -->
+      <view class="info-card">
+        <h3 class="info-title">使用说明</h3>
+        <p class="info-text">通过CSS变量定义不同主题的样式，使用data-theme属性切换主题。</p>
+      </view>
+    </view>
+  </view>
+</scroll-view>

@@ -4,7 +4,7 @@ A simple WeChat Mini Program demo demonstrating how to implement theme switching
 
 https://github.com/user-attachments/assets/4036159e-4492-46d5-9e19-39bc63d59605
 
-## 功能说明
+## Features
 
 - Support for light/dark theme switching
 - Theme styles defined using CSS variables

@@ -2,6 +2,8 @@
 
 一个简单的微信小程序demo，演示如何使用CSS变量实现主题切换功能。
 
+https://github.com/user-attachments/assets/4036159e-4492-46d5-9e19-39bc63d59605
+
 ## 功能说明
 
 - 支持浅色/深色主题切换

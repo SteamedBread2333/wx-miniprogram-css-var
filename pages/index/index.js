@@ -2,7 +2,8 @@
 Page({
   data: {
     currentTheme: 'light', // 默认浅色主题
-    pageTheme: 'light' // 用于绑定到scroll-view的data-theme属性
+    pageTheme: 'light', // 用于绑定到scroll-view的data-theme属性
+    inlineStyle: '' // 用于存储行内样式
   },
 
   onLoad() {
@@ -26,7 +27,8 @@ Page({
     const theme = e.currentTarget.dataset.theme
     this.setData({
       currentTheme: theme,
-      pageTheme: theme
+      pageTheme: theme,
+      inlineStyle: '' // 清除行内样式，使用CSS文件中的主题
     })
     // 应用主题
     this.applyTheme(theme)
@@ -68,5 +70,31 @@ Page({
         }
       })
     }
+  },
+
+  // 使用行内样式切换主题
+  switchThemeInline() {
+    // 定义自定义主题的行内样式（CSS变量）- 使用紫色/粉色系，明显区别于浅色主题
+    const customThemeStyle = '--bg-color: #f5e6ff; --text-color: #6b2c91; --primary-color: #9b59b6; --secondary-color: #e91e63; --border-color: #d4a5e8; --card-bg: #ffffff; --button-bg: #9b59b6; --button-text: #ffffff;'
+    
+    // 设置data-theme为custom，并应用行内样式
+    this.setData({
+      currentTheme: 'custom',
+      pageTheme: 'custom',
+      inlineStyle: customThemeStyle
+    })
+    
+    // 保存主题设置到本地存储
+    wx.setStorageSync('theme', 'custom')
+    
+    // 更新导航栏颜色（自定义主题使用紫色背景）
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#9b59b6',
+      animation: {
+        duration: 300,
+        timingFunc: 'easeInOut'
+      }
+    })
   }
 })

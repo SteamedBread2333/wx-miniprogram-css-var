@@ -15,7 +15,8 @@ scroll-view {
 /* 深色主题 */
 page[data-theme="dark"],
 scroll-view[data-theme="dark"],
-.modal-content[data-theme="dark"] {
+.modal-content[data-theme="dark"],
+.theme-card[data-theme="dark"] {
   --bg-color: #1a1a1a;
   --text-color: #e8e8e8;
   --primary-color: green;

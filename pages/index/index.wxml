@@ -40,12 +40,29 @@
       <view class="card">
         <button class="primary-btn" bindtap="showModal">打开自定义弹框</button>
       </view>
+      
+      <!-- 自定义组件示例 -->
+      <view class="card">
+        <h2 class="card-title">自定义组件示例</h2>
+        <p class="card-text">下面的卡片是自定义组件，样式文件直接使用CSS变量，会自动应用当前主题。</p>
+        
+        <theme-card 
+          title="主题卡片组件"
+          content="这是一个自定义组件，样式文件直接使用CSS变量（如 var(--card-bg)、var(--text-color) 等），会根据当前主题自动应用对应的颜色。"
+          bindtap="onCardTap"
+        ></theme-card>
+        
+        <theme-card 
+          title="另一个主题卡片"
+          content="切换主题后，组件的样式会自动更新，无需修改组件代码。"
+        ></theme-card>
+      </view>
     </view>
   </view>
   
   <!-- 自定义弹框 -->
   <view class="modal-mask {{showModalFlag ? 'show' : ''}}" bindtap="hideModal">
-    <view class="modal-content" catchtap="stopPropagation">
+    <view class="modal-content" data-theme="{{pageTheme || currentTheme}}" style="{{inlineStyle}}" catchtap="stopPropagation">
       <view class="modal-header">
         <text class="modal-title">自定义弹框</text>
         <text class="modal-close" bindtap="hideModal">×</text>

@@ -1,0 +1,19 @@
+<!--components/theme-card/theme-card.wxml-->
+<view 
+  class="theme-card" 
+  data-theme="{{theme}}" 
+  style="{{inlineStyle}}"
+  bindtap="onCardTap"
+>
+  <view class="theme-card-header">
+    <text class="theme-card-title">{{title}}</text>
+    <view class="theme-card-badge">组件</view>
+  </view>
+  <view class="theme-card-body">
+    <text class="theme-card-content">{{content}}</text>
+  </view>
+  <view class="theme-card-footer">
+    <view class="theme-card-tag">标签1</view>
+    <view class="theme-card-tag">标签2</view>
+  </view>
+</view>

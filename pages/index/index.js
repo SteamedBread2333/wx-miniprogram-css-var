@@ -145,5 +145,13 @@ Page({
       icon: 'success'
     })
     this.hideModal()
+  },
+
+  // 组件点击事件处理
+  onCardTap(e) {
+    wx.showToast({
+      title: `点击了：${e.detail.title}`,
+      icon: 'none'
+    })
   }
 })

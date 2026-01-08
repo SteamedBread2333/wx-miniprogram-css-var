@@ -1,0 +1,64 @@
+/* components/theme-card/theme-card.wxss */
+/* 组件样式直接使用CSS变量，自动应用主题 */
+
+.theme-card {
+  background-color: var(--card-bg);
+  border: 2rpx solid var(--border-color);
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.theme-card:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.theme-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid var(--border-color);
+}
+
+.theme-card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.theme-card-badge {
+  padding: 8rpx 16rpx;
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  border-radius: 8rpx;
+  font-size: 20rpx;
+}
+
+.theme-card-body {
+  margin-bottom: 20rpx;
+}
+
+.theme-card-content {
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.theme-card-footer {
+  display: flex;
+  gap: 16rpx;
+  flex-wrap: wrap;
+}
+
+.theme-card-tag {
+  padding: 8rpx 16rpx;
+  background-color: var(--secondary-color);
+  color: var(--button-text);
+  border-radius: 6rpx;
+  font-size: 24rpx;
+}

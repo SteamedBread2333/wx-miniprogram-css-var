@@ -3,19 +3,40 @@ Page({
   data: {
     currentTheme: 'light', // 默认浅色主题
     pageTheme: 'light', // 用于绑定到scroll-view的data-theme属性
-    inlineStyle: '' // 用于存储行内样式
+    inlineStyle: '', // 用于存储行内样式
+    showModalFlag: false // 控制弹框显示/隐藏
   },
 
   onLoad() {
     // 从本地存储加载主题设置
     const savedTheme = wx.getStorageSync('theme')
     if (savedTheme) {
-      this.setData({
-        currentTheme: savedTheme,
-        pageTheme: savedTheme
-      })
-      // 应用已保存的主题
-      this.applyTheme(savedTheme)
+      // 如果是自定义主题，需要恢复行内样式
+      if (savedTheme === 'custom') {
+        const customThemeStyle = '--bg-color: #f5e6ff; --text-color: #6b2c91; --primary-color: #9b59b6; --secondary-color: #e91e63; --border-color: #d4a5e8; --card-bg: #ffffff; --button-bg: #9b59b6; --button-text: #ffffff;'
+        this.setData({
+          currentTheme: savedTheme,
+          pageTheme: savedTheme,
+          inlineStyle: customThemeStyle
+        })
+        // 应用自定义主题的导航栏颜色
+        wx.setNavigationBarColor({
+          frontColor: '#ffffff',
+          backgroundColor: '#9b59b6',
+          animation: {
+            duration: 300,
+            timingFunc: 'easeInOut'
+          }
+        })
+      } else {
+        this.setData({
+          currentTheme: savedTheme,
+          pageTheme: savedTheme,
+          inlineStyle: '' // 清除行内样式，使用CSS文件中的主题
+        })
+        // 应用已保存的主题
+        this.applyTheme(savedTheme)
+      }
     } else {
       // 首次加载，应用默认主题
       this.applyTheme(this.data.currentTheme)
@@ -96,5 +117,33 @@ Page({
         timingFunc: 'easeInOut'
       }
     })
+  },
+
+  // 显示弹框
+  showModal() {
+    this.setData({
+      showModalFlag: true
+    })
+  },
+
+  // 隐藏弹框
+  hideModal() {
+    this.setData({
+      showModalFlag: false
+    })
+  },
+
+  // 阻止事件冒泡
+  stopPropagation() {
+    // 阻止点击弹框内容区域时关闭弹框
+  },
+
+  // 确认按钮处理
+  handleConfirm() {
+    wx.showToast({
+      title: '已确认',
+      icon: 'success'
+    })
+    this.hideModal()
   }
 })

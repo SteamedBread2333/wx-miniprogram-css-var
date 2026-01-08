@@ -35,6 +35,29 @@
         <h3 class="info-title">使用说明</h3>
         <p class="info-text">通过CSS变量定义不同主题的样式，使用data-theme属性切换主题。</p>
       </view>
+      
+      <!-- 弹框触发按钮 -->
+      <view class="card">
+        <button class="primary-btn" bindtap="showModal">打开自定义弹框</button>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 自定义弹框 -->
+  <view class="modal-mask {{showModalFlag ? 'show' : ''}}" bindtap="hideModal">
+    <view class="modal-content" catchtap="stopPropagation">
+      <view class="modal-header">
+        <text class="modal-title">自定义弹框</text>
+        <text class="modal-close" bindtap="hideModal">×</text>
+      </view>
+      <view class="modal-body">
+        <text class="modal-text">这是一个自定义弹框，会根据当前主题自动应用主题色。</text>
+        <text class="modal-text">当前主题：{{currentTheme}}</text>
+      </view>
+      <view class="modal-footer">
+        <button class="modal-btn modal-btn-cancel" bindtap="hideModal">取消</button>
+        <button class="modal-btn modal-btn-confirm" bindtap="handleConfirm">确认</button>
+      </view>
     </view>
   </view>
 </scroll-view>

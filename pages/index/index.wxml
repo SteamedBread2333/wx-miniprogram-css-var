@@ -62,7 +62,7 @@
   
   <!-- 自定义弹框 -->
   <view class="modal-mask {{showModalFlag ? 'show' : ''}}" bindtap="hideModal">
-    <view class="modal-content" data-theme="{{pageTheme || currentTheme}}" style="{{inlineStyle}}" catchtap="stopPropagation">
+    <view class="modal-content" catchtap="stopPropagation">
       <view class="modal-header">
         <text class="modal-title">自定义弹框</text>
         <text class="modal-close" bindtap="hideModal">×</text>

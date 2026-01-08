@@ -1,8 +1,6 @@
 <!--components/theme-card/theme-card.wxml-->
 <view 
   class="theme-card" 
-  data-theme="{{theme}}" 
-  style="{{inlineStyle}}"
   bindtap="onCardTap"
 >
   <view class="theme-card-header">
